@@ -5,8 +5,7 @@ class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: '',
-      items: []
+      term: ''
     };
   }
 
@@ -16,11 +15,10 @@ class TodoForm extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+    this.props.list(this.state.term);
     this.setState({
-      term: '',
-      items: [...this.state.items, this.state.term]
+      term: ''
     });
-    this.props.list([...this.state.items, this.state.term])
   }
 
   render() {

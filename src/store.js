@@ -3,7 +3,9 @@ import { createStore } from 'redux';
 export const List = (state = [], action) => {
     switch (action.type) {
         case 'list':
-            return action.items;
+            return [...state, { value: action.items, isDeleted: false, checked: false }];
+        case 'check':
+            return [...state]
         default:
             return state;
     }
