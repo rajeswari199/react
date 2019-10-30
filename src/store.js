@@ -5,7 +5,7 @@ export const List = (state = [], action) => {
         case 'list':
             return [...state, { value: action.items, isDeleted: false, checked: false }];
         case 'check':
-            return [...state]
+            return [...action.index];
         default:
             return state;
     }

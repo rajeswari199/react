@@ -13,7 +13,7 @@ class DeletedList extends React.Component {
             items: [...props.items],
         };
     }
-    delete = (event) => {
+    undo = (event) => {
         this.setState({
             items: this.state.items.map((item, index) =>
                 (index == event.target.id) ? item['isDeleted'] = !item.isDeleted : item
@@ -22,6 +22,11 @@ class DeletedList extends React.Component {
             this.props.check(this.state.items)
         });
     }
+    delete = (event) => {
+            this.props.check(this.state.items.filter((item, index) =>
+            index != event.target.id
+        ));
+    }
     render() {
         return (
             <ul>
@@ -29,9 +34,10 @@ class DeletedList extends React.Component {
                     this.props.items.map((item, index) => {
                         return (
                             item.isDeleted ?
-                                <div key={'key'+ index}>
+                                <div key={'key' + index}>
                                     <li>{item.value}</li>
-                                    <button id={index} onClick={this.delete}>undo</button>
+                                    <button id={index} onClick={this.undo}>undo</button>
+                                    <button id={index} onClick={this.delete}>delete</button>
                                 </div>
                                 : null
                         )
@@ -51,4 +57,4 @@ const mapDispatchToProps = (dispatch) => ({
     check: (data) => { dispatch({ index: data, type: 'check' }) }
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(DeletedList);
+export default connect(mapStateToProps, mapDispatchToProps)(DeletedList);
