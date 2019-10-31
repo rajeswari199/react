@@ -21,6 +21,14 @@ class Links extends React.Component {
                         <li>
                             <Link to="/waterTank">WATER TANK PROBLEM</Link>
                         </li>
+                        <ul>
+                            <li>
+                                <Link to="/API/weather">WEATHER API</Link>
+                            </li>
+                            <li>
+                                <Link to="/API/calculator">CALCULATOR API</Link>
+                            </li>
+                        </ul>
                     </ul>
                 </header>
             </div>

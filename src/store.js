@@ -6,6 +6,8 @@ export const List = (state = [], action) => {
             return [...state, { value: action.items, isDeleted: false, checked: false }];
         case 'check':
             return [...action.index];
+        case 'weather':
+            return { ...action.index }
         default:
             return state;
     }
