@@ -1,5 +1,4 @@
 import React from 'react'
-import * as _ from 'lodash'
 import * as APIService from '../../services'
 import { connect } from 'react-redux'
 
@@ -7,7 +6,6 @@ class Weather extends React.Component {
 
     onSubmit = async (event) => {
         event.preventDefault();
-        console.log(this.props.weather);
         await APIService.weatherAPI(this.props.weather);
     }
 
