@@ -10,7 +10,7 @@ exports.calculator = async (fname, sname) => {
     return response;
 }
 
-exports.weatherAPI = async () => {
+exports.weatherAPI = async (dispatch) => {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Chennai,IN&appid=16251f7122ebfee82455ad435fa46da3`);
-    return await api_call.json();
-}
+    const data = await api_call.json();
+    dispatch(data);}

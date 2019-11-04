@@ -4,20 +4,11 @@ import * as APIService from '../../services'
 import { connect } from 'react-redux'
 
 class Weather extends React.Component {
-    constructor() {
-        super();
-        // this.APIService = this.props.APIService.bind(this)
-        this.state = { weather: { weather: [{ description: '' }] } }
-    }
 
     onSubmit = async (event) => {
         event.preventDefault();
-        this.setState({ weather: await APIService.weatherAPI() });
-        this.props.weather(this.state.weather);
-    };
-
-    calculation = () => {
-
+        console.log(this.props.weather);
+        await APIService.weatherAPI(this.props.weather);
     }
 
     onChange = (event) => {
@@ -27,7 +18,7 @@ class Weather extends React.Component {
     render() {
         return (
             <div>
-                <h2>WEATHER = {this.state.weather.weather[0].description}</h2>
+                {this.props.apiData.weather && <h2>WEATHER = {this.props.apiData.weather[0].description}</h2>}
                 <form className="App" onSubmit={this.onSubmit}>
                     <button>Submit</button>
                 </form>
@@ -36,8 +27,12 @@ class Weather extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    apiData: state
+})
+
 const mapDispatchToProps = (dispatch) => ({
     weather: (data) => { dispatch({ index: data, type: 'weather' }) }
 });
 
-export default connect(null, mapDispatchToProps)(Weather)
+export default connect(mapStateToProps, mapDispatchToProps)(Weather)
