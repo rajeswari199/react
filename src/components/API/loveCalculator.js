@@ -1,21 +1,19 @@
 import React from 'react'
-import * as _ from 'lodash'
-import APIService from '../../services'
+import { calculator } from '../../services'
+import { connect } from 'react-redux'
 
 class LoveCalculator extends React.Component {
     constructor() {
         super();
-        this.state = { compatiblity: { percentage: 0, result: '' }, fname: '', sname: '' }
+        this.state = { fname: '', sname: '' }
     }
 
     onSubmit = async (event) => {
         event.preventDefault();
-        const response = await APIService.calculator(this.state.fname, this.state.sname);
-        this.setState({ compatiblity: await response.json() });
+        await calculator(this.state.fname, this.state.sname);
     };
 
     onChange = (event) => {
-        console.log(event.target)
         event.target.id === 'fname' ?
             this.setState({ fname: event.target.value })
             : this.setState({ sname: event.target.value })
@@ -24,7 +22,7 @@ class LoveCalculator extends React.Component {
     render() {
         return (
             <div>
-                <h2>COMPATIBILITY = {this.state.compatiblity.percentage}% {this.state.compatiblity.result}</h2>
+                {this.props.compatiblity && <h2>COMPATIBILITY = {this.props.compatiblity.percentage}% {this.props.compatiblity.result}</h2>}
                 <form className="App" onSubmit={this.onSubmit}>
                     <input id='fname' value={this.state.fname} onChange={this.onChange} />
                     <input id='sname' value={this.state.sname} onChange={this.onChange} />
@@ -35,4 +33,8 @@ class LoveCalculator extends React.Component {
     }
 }
 
-export default LoveCalculator
+const mapStateToProps = (state) => ({
+    compatiblity: state
+})
+
+export default connect(mapStateToProps)(LoveCalculator)
