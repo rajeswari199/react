@@ -31,3 +31,14 @@ export const trainAPI = async (train) => {
     })
     return await apiData.json();
 }
+
+export const coinFlip = async () => {
+    const a = await fetch("https://coin-flip1.p.rapidapi.com/headstails", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "coin-flip1.p.rapidapi.com",
+            "x-rapidapi-key": "8748ffe5b7msh5358ac3edcfa346p1f8c20jsnead576b03eed"
+        }
+    });
+    return await a.json();
+}

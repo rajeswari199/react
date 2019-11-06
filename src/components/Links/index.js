@@ -31,6 +31,9 @@ class Links extends React.Component {
                             <li>
                                 <Link to="/API/train">TRAIN API</Link>
                             </li>
+                            <li>
+                                <Link to="/API/coin">COIN API</Link>
+                            </li>
                         </ul>
                     </ul>
                 </header>
