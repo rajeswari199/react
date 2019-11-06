@@ -35,15 +35,12 @@ class TodoList extends React.Component {
     return (
       <ul>
         {
-          this.state.items.map((item, index) => {
-            return (
+          this.state.items.map((item, index) =>
               !item.isDeleted ? <div key={'s' + index}>
                 <input type="checkbox" onChange={this.handleCheckClick} checked={item.checked} id={index} className="filled-in" />
                 <li>{item.value}</li>
                 <button id={index} onClick={this.delete}>remove</button>
-              </div> : null
-            )
-          }
+              </div> : null  
           )
         }
       </ul>
@@ -52,7 +49,7 @@ class TodoList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  items: state
+  items: state.List
 });
 
 const mapDispatchToProps = (dispatch) => ({

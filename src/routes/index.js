@@ -5,6 +5,7 @@ import Links from '../components/Links'
 import WaterTank from '../components/WaterTank'
 import Weather from '../components/API/weather'
 import LoveCalculator from '../components/API/loveCalculator'
+import train from '../components/API/train'
 
 const RouteApp = () => (
     <Switch>
@@ -14,6 +15,7 @@ const RouteApp = () => (
         <Route exact path="/waterTank" component={WaterTank} />
         <Route exact path="/API/weather" component={Weather} />
         <Route exact path="/API/calculator" component={LoveCalculator} />
+        <Route exact path="/API/train" component={train} />
     </Switch>
 )
 

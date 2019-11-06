@@ -26,11 +26,11 @@ class Weather extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    apiData: state
-})
+    apiData: state.Weather
+});
 
 const mapDispatchToProps = (dispatch) => ({
-    weather: (data) => { dispatch({ index: data, type: 'weather' }) }
+    weather: (data) => { dispatch({ payload: data, type: 'weather' }) }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Weather)

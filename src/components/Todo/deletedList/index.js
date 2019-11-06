@@ -50,7 +50,7 @@ class DeletedList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    items: state
+    items: state.List
 });
 
 const mapDispatchToProps = (dispatch) => ({

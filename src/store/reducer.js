@@ -1,17 +1,41 @@
+import { combineReducers } from "redux";
 
-export const List = (state = [], action) => {
+const List = (state = [], action) => {
     switch (action.type) {
         case 'list':
             return [...state, { value: action.items, isDeleted: false, checked: false }];
-        case 'calculator':
-            return { ...action.payload };
         case 'check':
             return [...action.index];
-        case 'weather':
-            return { ...action.index }
         default:
-            return state;
+            return [...state];
     }
 }
 
-export default List;
+const Calculator = (state = {}, action) => {
+    switch (action.type) {
+        case 'calculator':
+            return { ...action.payload };
+        default:
+            return { ...state }
+    }
+}
+
+const Weather = (state = {}, action) => {
+    switch (action.type) {
+        case 'weather':
+            return { ...action.payload };
+        default:
+            return { ...state }
+    }
+}
+
+const Train = (state = [{ train_num: '', name: '' }], action) => {
+    switch (action.type) {
+        case 'train':
+            return [...action.payload];
+        default:
+            return [...state]
+    }
+}
+
+export default combineReducers({ List, Calculator, Weather, Train })

@@ -17,7 +17,7 @@ const CompletedList = (props) => {
   }
 
 const mapStateToProps = state => ({
-    items: state
+    items: state.List
 });
 
 export default connect(mapStateToProps)(CompletedList);

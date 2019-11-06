@@ -1,8 +1,8 @@
 import { actions } from '../store/actionTypes';
 import store from '../store'
 
-const LIST = (data) => {
+const CALCULATOR = (data) => {
     return store.dispatch({ payload: data, type: actions.CALCULATOR });
 }
 
-export default LIST;
+export default CALCULATOR;

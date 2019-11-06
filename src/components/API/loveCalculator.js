@@ -34,7 +34,7 @@ class LoveCalculator extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    compatiblity: state
+    compatiblity: state.Calculator
 })
 
 export default connect(mapStateToProps)(LoveCalculator)
