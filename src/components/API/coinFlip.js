@@ -13,7 +13,6 @@ class CoinFlip extends React.Component {
     };
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 {this.state.coin && <h2>COIN = {this.state.coin.outcome}</h2>}

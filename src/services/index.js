@@ -29,7 +29,8 @@ export const trainAPI = async (train) => {
         },
         "body": JSON.stringify({ "search": `${train.name}` })
     })
-    return await apiData.json();
+    const a = await apiData.json();
+    return (dispatch) => dispatch({type: 'train', payload: a});
 }
 
 export const coinFlip = async () => {

@@ -34,8 +34,4 @@ const mapStateToProps = (state) => ({
     train: state.Train
 })
 
-const mapDispatchToProps = (dispatch) => ({
-    dispatch: (data) => dispatch({ type: 'train', payload: data })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Train)
+export default connect(mapStateToProps)(Train)
