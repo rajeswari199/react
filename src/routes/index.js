@@ -7,6 +7,7 @@ import Weather from '../components/API/weather'
 import LoveCalculator from '../components/API/loveCalculator'
 import train from '../components/API/train'
 import coin from '../components/API/coinFlip'
+import mice from '../components/Mice'
 
 const RouteApp = () => (
     <Switch>
@@ -18,6 +19,8 @@ const RouteApp = () => (
         <Route exact path="/API/calculator" component={LoveCalculator} />
         <Route exact path="/API/train" component={train} />
         <Route exact path="/API/coin" component={coin} />
+        <Route exact path="/mice" component={mice} />
+
     </Switch>
 )
 
