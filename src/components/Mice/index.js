@@ -60,7 +60,7 @@ class Mice extends React.Component {
                  * array does not have any reachable path, if initial value (0,0) is popped out 
                  * and 'path' becomes an empty array.
                  */
-                console.log('not reachable')
+                this.setState({ path: 'not reachable' })
                 return
             }
             /**
