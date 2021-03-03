@@ -37,6 +37,15 @@ class Links extends React.Component {
                             <li>
                                 <Link to="/mice">MICE PROBLEM</Link>
                             </li>
+                            <li>
+                                <Link to="/n-queen">N-QUEEN PROBLEM</Link>
+                            </li>
+                            <li>
+                                <Link to="/parent-child">PARENT CHILD</Link>
+                            </li>
+                            <li>
+                                <Link to="/file-upload">FILE UPLOAD</Link>
+                            </li>
                         </ul>
                     </ul>
                 </header>

@@ -8,6 +8,9 @@ import LoveCalculator from '../components/API/loveCalculator'
 import train from '../components/API/train'
 import coin from '../components/API/coinFlip'
 import mice from '../components/Mice'
+import NQueen from '../components/N-Queen'
+import ParentChild from '../components/ParentChild'
+import FileUpload from '../components/FileUpload'
 
 const RouteApp = () => (
     <Switch>
@@ -20,7 +23,9 @@ const RouteApp = () => (
         <Route exact path="/API/train" component={train} />
         <Route exact path="/API/coin" component={coin} />
         <Route exact path="/mice" component={mice} />
-
+        <Route exact path="/n-queen" component={NQueen} />
+        <Route exact path="/parent-child" component={ParentChild} />
+        <Route exact path="/file-upload" component={FileUpload} />
     </Switch>
 )
 
