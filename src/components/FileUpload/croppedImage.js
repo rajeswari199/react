@@ -22,13 +22,14 @@ export const getCroppedImg = (pixelCrop, imgRef, asynchronousCrop, fileName) => 
     if (asynchronousCrop) {
 
         /**
-         * toBlob is both faster and asynchronous, but not supported on old browsers
+         * toBlob is both faster and asynchronous, but not supported on old browsers.
+         * image/png has been used to preserve transparent background of the image, if needed image/jepg can be used.
          */
         const image = new Promise((resolve, reject) => {
             canvas.toBlob(blob => {
                 blob.name = fileName;
                 resolve(blob);
-            }, 'image/jpeg', 1);
+            }, 'image/png', 1);
         });
         return image
     }
