@@ -9,7 +9,7 @@ import React, { useMemo, useCallback, useState } from 'react';
 
 
 // Keeps track of all created functions during the app's life 
-const functions: Set<any> = new Set();
+const functions = new Set();
 function RenderCounts({ count1, count2 }) {
     const calculate = (count2, count1) => {
         /**
