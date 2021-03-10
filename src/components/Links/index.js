@@ -46,6 +46,9 @@ class Links extends React.Component {
                             <li>
                                 <Link to="/file-upload">FILE UPLOAD</Link>
                             </li>
+                            <li>
+                                <Link to="/hooks">HOOKS</Link>
+                            </li>
                         </ul>
                     </ul>
                 </header>
